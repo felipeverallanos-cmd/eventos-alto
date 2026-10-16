@@ -1,115 +1,115 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jornada Deportiva Familiar Carozzi Nos 2026 · Alto Producciones</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@400;500;600&family=Oswald:wght@500&display=swap" rel="stylesheet">
-<style>
-:root{
-  /* LOGO DEL EVENTO: cambiar solo esta ruta por evento (PNG transparente, idealmente >=1000 px). Sin logo: agregar la clase "logo-evento--vacio" al elemento. */
-  --logo-evento:url("assets/evento/logo_evento.png");
-  --navy:#0B1F3A;--orange:#FA4E1E;--lime:#C6F432;--blue:#1E5EFF;--bg:#F3F5F8;--muted:#5B6676;--ink:#1A1A1A}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-header{background:var(--navy);position:sticky;top:0;z-index:5}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
-header img{height:60px;display:block}
-nav a{color:#fff;opacity:.85;text-decoration:none;font-size:14px;margin-left:22px}
-.hero{background:linear-gradient(120deg,var(--navy) 55%,#12305a);color:#fff;position:relative;overflow:hidden;padding:90px 0 110px}
-.hero .wrap{position:relative;z-index:2}
-.tag{font-family:Oswald;text-transform:uppercase;letter-spacing:3px;font-size:14px;color:var(--lime)}
-h1{font-family:Montserrat;font-weight:900;font-size:64px;line-height:1.02;margin:16px 0 28px;max-width:720px;text-transform:uppercase}
-h1 span{color:var(--orange)}
-.chips{display:flex;flex-wrap:wrap;gap:12px}
-.chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);padding:12px 18px;border-radius:10px;font-family:Oswald;font-size:18px}
-.chip b{color:var(--lime);font-weight:500;margin-right:8px}
-.hero-grid{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center}
-/* Slot logo del evento (independiente del logo de Alto) */
-.logo-evento{background:#fff var(--logo-evento) center/contain no-repeat;background-origin:content-box;border-radius:20px}
-.logo-evento--hero{width:340px;aspect-ratio:1/1;padding:26px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
-.logo-evento--header{width:64px;height:56px;padding:4px;border-radius:10px}
-.logo-evento--vacio{background-image:none;border:2px dashed #c3c9d3;display:grid;place-items:center;font-family:Oswald;text-transform:uppercase;letter-spacing:2px;color:var(--muted);font-size:14px}
-.logo-evento--vacio:before{content:"Logo evento"}
-section{padding:72px 0}section.alt{background:var(--bg)}
-h2{font-family:Montserrat;font-weight:800;font-size:36px;color:var(--navy);margin:6px 0 24px}
-.lbl{font-family:Oswald;text-transform:uppercase;letter-spacing:3px;color:var(--orange);font-size:14px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:#fff;border-radius:14px;padding:24px;box-shadow:0 4px 18px rgba(11,31,58,.07);border-top:4px solid var(--orange)}
-.card h3{font-family:Montserrat;font-size:18px;color:var(--navy);margin-bottom:6px}
-.card p{color:var(--muted);font-size:15px}
-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(11,31,58,.07)}
-th{background:var(--navy);color:#fff;text-align:left;font-family:Oswald;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;font-size:13px;padding:14px 18px}
-td{padding:14px 18px;border-bottom:1px solid #e6e9ee;font-size:15px}
-.ph{color:var(--orange);font-weight:600}
-.pill{background:var(--lime);color:var(--navy);font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px}
-.tw{overflow-x:auto}
-.layout{height:380px;border-radius:16px;border:3px dashed #b8c0cc;background:repeating-linear-gradient(45deg,#e9edf2,#e9edf2 14px,#f3f5f8 14px,#f3f5f8 28px);display:grid;place-items:center;text-align:center;color:var(--muted);font-family:Oswald;letter-spacing:2px;text-transform:uppercase}
-.note{margin-top:14px;color:var(--muted);font-size:14px}
-ul.check{list-style:none;display:grid;gap:12px}
-ul.check li{background:#fff;padding:18px 20px;border-radius:12px;border-left:5px solid var(--lime);box-shadow:0 4px 18px rgba(11,31,58,.06)}
-.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.svc .s{background:#fff;border-radius:16px;padding:26px 20px;text-align:center;box-shadow:0 4px 18px rgba(11,31,58,.07)}
-.ico{width:64px;height:64px;margin:0 auto 14px;border-radius:16px;background:var(--navy);display:grid;place-items:center}
-.ico svg{width:34px;height:34px;stroke:var(--lime);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.s h3{font-family:Montserrat;font-size:16px;color:var(--navy)}
-footer{background:var(--navy);color:#cfd6e0;padding:40px 0;font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-footer img{height:64px}
-@media(max-width:800px){nav{display:none}h1{font-size:38px}.hero{padding:48px 0 64px}.hero-grid{grid-template-columns:1fr;gap:28px}.logo-evento--hero{width:220px;padding:16px;justify-self:center;order:-1}.logo-evento--header{width:48px;height:44px}.grid3{grid-template-columns:1fr}.svc{grid-template-columns:1fr 1fr}h2{font-size:28px}section{padding:52px 0}.chip{font-size:16px}}
-</style></head><body>
-<header><div class="wrap"><img src="logo_oficial/logo_alto_vector_fondo_negro.svg" alt="Alto Producciones">
-<nav><a href="#resumen">Resumen</a><a href="#cronograma">Cronograma</a><a href="#montaje">Montaje</a><a href="#layout">Layout</a><a href="#radios">Radios</a><a href="#permisos">Permisos</a><a href="#servicios">Servicios</a></nav>
-<div class="logo-evento logo-evento--header" role="img" aria-label="Logo del evento"></div></div></header>
-
-<div class="hero"><div class="wrap hero-grid"><div class="hero-txt">
-<div class="tag">Alto Producciones presenta</div>
-<h1>Jornada Deportiva Familiar <span>Carozzi Nos</span> 2026</h1>
-<div class="chips"><div class="chip"><b>Fecha</b>Domingo 25 de octubre de 2026</div><div class="chip"><b>Lugar</b>Planta Nos</div><div class="chip"><b>Horario</b>08:00 – 14:00</div></div>
-</div>
-<div class="logo-evento logo-evento--hero" role="img" aria-label="Logo Jornada Deportiva Familiar Carozzi Nos 2026"></div>
-</div></div>
-
-<section id="resumen"><div class="wrap"><div class="lbl">01 · Resumen</div><h2>Resumen del evento</h2>
-<div class="grid3">
-<div class="card"><h3>El evento</h3><p>Jornada Deportiva Carozzi Nos 2026, realizada en Planta Nos el 25 de octubre de 2026.</p></div>
-<div class="card"><h3>Producción</h3><p>Alto Producciones, en coordinación con Eleva Pro.</p></div>
-<div class="card"><h3>Fechas clave</h3><p>Montaje: desde el 23 de octubre (2 días)<br>Evento: 25 de octubre de 2026, 08:00–14:00<br>Desmontaje: domingo 25 de octubre, 15:00–22:00</p></div>
-</div></div></section>
-
-<section id="cronograma" class="alt"><div class="wrap"><div class="lbl">02 · Cronograma</div><h2>Cronograma general · 25 oct</h2>
-<div class="tw"><table><tr><th>Hora</th><th>Actividad</th><th>Lugar</th></tr>
-<tr><td class="ph">[hora]</td><td class="ph">[actividad]</td><td class="ph">[lugar]</td></tr>
-<tr><td class="ph">[hora]</td><td class="ph">[actividad]</td><td class="ph">[lugar]</td></tr>
-<tr><td class="ph">[hora]</td><td class="ph">[actividad]</td><td class="ph">[lugar]</td></tr></table></div></div></section>
-
-<section id="montaje"><div class="wrap"><div class="lbl">03 · Timing de montaje</div><h2>Timing de montaje</h2>
-<div class="tw"><table><tr><th>Día</th><th>Hora</th><th>Tarea / servicio</th><th>Zona</th><th>Estado</th></tr>
-<tr><td><b>23 oct</b></td><td class="ph">[hora]</td><td class="ph">[tarea]</td><td class="ph">[zona]</td><td><span class="pill">[estado]</span></td></tr>
-<tr><td><b>24 oct</b></td><td class="ph">[hora]</td><td class="ph">[tarea]</td><td class="ph">[zona]</td><td><span class="pill">[estado]</span></td></tr></table></div></div></section>
-
-<section id="layout" class="alt"><div class="wrap"><div class="lbl">04 · Layout</div><h2>Layout del recinto</h2>
-<figure style="margin:0 0 16px"><a href="assets/layout/Layout_Nos_definitivo_1_general.png" target="_blank"><img src="assets/layout/Layout_Nos_definitivo_1_general.png" alt="Layout definitivo general planta Nos" style="max-width:100%;height:auto;display:block"></a><figcaption>Layout definitivo 16 oct · vista general (clic para ampliar).</figcaption></figure>
-<figure style="margin:0 0 16px"><a href="assets/layout/Layout_Nos_definitivo_2_zoom_cancha.png" target="_blank"><img src="assets/layout/Layout_Nos_definitivo_2_zoom_cancha.png" alt="Layout definitivo zoom cancha" style="max-width:100%;height:auto;display:block"></a><figcaption>Zoom cancha (clic para ampliar).</figcaption></figure>
-<figure style="margin:0 0 16px"><a href="assets/layout/Grafica_Nos_v16oct.png" target="_blank"><img src="assets/layout/Grafica_Nos_v16oct.png" alt="Gráfica Nos 16 oct" style="max-width:100%;height:auto;display:block"></a><figcaption>Gráfica Nos · versión 16 oct.</figcaption></figure>
-<p class="note">Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf" download>Descargar Layout_Nos_definitivo.pdf</a></p></div></section>
-
-<section id="radios"><div class="wrap"><div class="lbl">05 · Comunicaciones</div><h2>Distribución de radios</h2>
-<div class="tw"><table><tr><th>Canal</th><th>Área</th><th>Responsable</th></tr>
-<tr><td class="ph">[canal]</td><td class="ph">[área]</td><td class="ph">[responsable]</td></tr>
-<tr><td class="ph">[canal]</td><td class="ph">[área]</td><td class="ph">[responsable]</td></tr></table></div></div></section>
-
-<section id="permisos" class="alt"><div class="wrap"><div class="lbl">06 · Acceso a planta</div><h2>Permisos y acreditación</h2>
-<ul class="check"><li>Inducciones Carozzi / Pronexo: <b>martes y jueves a las 14:30</b>.</li><li>Todo el personal de montaje debe contar con inducción aprobada antes de ingresar a planta.</li></ul></div></section>
-
-<section id="servicios"><div class="wrap"><div class="lbl">07 · Servicios</div><h2>Servicios del evento</h2>
-<div class="svc">
-<div class="s"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"/></svg></div><h3>Escenario y animación</h3></div>
-<div class="s"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div><h3>Juegos mini kids</h3></div>
-<div class="s"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="5" r="2"/><circle cx="16" cy="5" r="2"/><path d="M8 8v13M6 10h4M16 8l-3 8h6l-3-8M16 16v5"/></svg></div><h3>Baños</h3></div>
-<div class="s"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/></svg></div><h3>Acreditación</h3></div>
-<div class="s"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 5a2 2 0 1 1 2 2c-1 0-2 1-2 2l9 6H3l9-6"/><path d="M3 15v2h18v-2"/></svg></div><h3>Guardarropía</h3></div>
-<div class="s"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12z"/></svg></div><h3>Hidratación</h3></div>
-<div class="s"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 21V9a8 8 0 0 1 16 0v12"/><path d="M8 21V10a4 4 0 0 1 8 0v11"/></svg></div><h3>Arco de partida</h3></div>
-<div class="s"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 2v8a2 2 0 0 0 4 0V2M9 10v12M17 2c-2 0-3 3-3 7h3v13"/></svg></div><h3>Comedores</h3></div>
-</div></div></section>
-
-<footer><div class="wrap"><img src="logo_oficial/logo_alto_vector_fondo_negro.svg" alt="Alto Producciones"><div>Producción: Alto Producciones · en coordinación con Eleva Pro · Contacto: [contacto]</div></div></footer>
-</body></html>
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> <a href="https://claude.ai/artifact/KQFNgfob3hJnPgAqPrxPqu" target="_blank" rel="noopener" style="display:inline-block;padding:10px 18px;border-radius:8px;background:#e8551e;color:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
+olor:#fff;font-weight:700;text-decoration:none;margin-right:12px">Abrir layout interactivo ↗</a> Layout definitivo: <a href="assets/layout/Layout_Nos_definitivo.pdf"#
