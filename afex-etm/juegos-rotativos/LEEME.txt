@@ -1,0 +1,1 @@
+Abrir 1-une-tus-divisas-icono.html (o INICIO.html) con Chrome. Los 4 juegos rotan solos, sin internet. Mantener todos los archivos en la misma carpeta.
