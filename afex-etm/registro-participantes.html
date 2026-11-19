@@ -18,13 +18,13 @@ td,th{border:1px solid #dde2ea;padding:5px;text-align:left}
 #lista{max-width:900px;margin:14px auto;display:none;background:#fff;padding:12px;border-radius:10px}
 </style></head><body>
 <div class="card">
-<h1>Registro participantes Afex EtMDay</h1>
+<h1>Llena los datos y participa</h1>
 <form id="f" autocomplete="off">
-<label>Nombre y apellido *</label><input id="nombre" required>
-<label>RUT</label><input id="rut" placeholder="12.345.678-9">
-<label>Correo *</label><input id="correo" type="email" required>
-<label>Teléfono</label><input id="telefono" type="tel" placeholder="+56 9 ...">
-<label>Comuna</label><input id="comuna">
+<label>¿Buscas soluciones para ti o para tu empresa? *</label>
+<div style="display:flex;gap:20px;font-size:17px;margin:6px 0"><label style="font-weight:400"><input type="radio" name="tipo" value="Persona" required style="width:auto"> Persona</label><label style="font-weight:400"><input type="radio" name="tipo" value="Empresa" style="width:auto"> Empresa</label></div>
+<label>Nombre y Apellido *</label><input id="nombre" required>
+<label>Email *</label><input id="correo" type="email" required>
+<label>Número telefónico</label><input id="telefono" type="tel" placeholder="+56 9 ...">
 <button class="p" type="submit">Registrarme</button>
 <div id="ok"></div>
 </form>
@@ -38,13 +38,13 @@ td,th{border:1px solid #dde2ea;padding:5px;text-align:left}
 <div id="lista"></div>
 <script>
 var K='afex_etm_registro';
-var C=['fecha','hora','nombre','rut','correo','telefono','comuna'];
+var C=['fecha','hora','tipo','nombre','correo','telefono'];
 function get(){try{return JSON.parse(localStorage.getItem(K)||'[]')}catch(e){return[]}}
 function set(a){localStorage.setItem(K,JSON.stringify(a));cnt()}
 function cnt(){document.getElementById('cnt').textContent='Registrados: '+get().length}
 document.getElementById('f').onsubmit=function(e){e.preventDefault();
 var d=new Date(),r={fecha:d.toLocaleDateString('es-CL'),hora:d.toLocaleTimeString('es-CL')};
-C.slice(2).forEach(function(c){r[c]=document.getElementById(c).value.trim()});
+var t=document.querySelector('input[name=tipo]:checked');r.tipo=t?t.value:'';C.slice(3).forEach(function(c){r[c]=document.getElementById(c).value.trim()});
 var a=get();a.push(r);set(a);this.reset();
 var ok=document.getElementById('ok');ok.textContent='Gracias, '+r.nombre+'. Quedaste registrado.';
 setTimeout(function(){ok.textContent=''},3000);document.getElementById('nombre').focus();
