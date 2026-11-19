@@ -24,6 +24,7 @@ td,th{border:1px solid #dde2ea;padding:5px;text-align:left}
 <label>¿Buscas soluciones para ti o para tu empresa? *</label>
 <div style="display:flex;gap:20px;font-size:17px;margin:6px 0"><label style="font-weight:400"><input type="radio" name="tipo" value="Persona" required style="width:auto"> Persona</label><label style="font-weight:400"><input type="radio" name="tipo" value="Empresa" style="width:auto"> Empresa</label></div>
 <label>Nombre y Apellido *</label><input id="nombre" required>
+<label>Nombre de la empresa</label><input id="empresa">
 <label>Email *</label><input id="correo" type="email" required>
 <label>Número telefónico</label><input id="telefono" type="tel" placeholder="+56 9 ...">
 <button class="p" type="submit">Registrarme</button>
@@ -40,7 +41,7 @@ td,th{border:1px solid #dde2ea;padding:5px;text-align:left}
 <div id="lista"></div>
 <script>
 var K='afex_etm_registro';
-var C=['fecha','hora','tipo','nombre','correo','telefono'];
+var C=['fecha','hora','tipo','nombre','empresa','correo','telefono'];
 function get(){try{return JSON.parse(localStorage.getItem(K)||'[]')}catch(e){return[]}}
 function set(a){localStorage.setItem(K,JSON.stringify(a));cnt()}
 function cnt(){document.getElementById('cnt').textContent='Registrados: '+get().length}
