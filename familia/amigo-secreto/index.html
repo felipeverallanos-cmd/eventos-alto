@@ -279,6 +279,19 @@ textarea { min-height: 110px; resize: vertical; }
 .tata-window { width: 86%; margin: 14px auto 0; height: 52px; }
 .tata-preview { padding: 12px 12px 14px; margin-bottom: 14px; }
 
+/* Version Cachupin (perro): ruleta en perspectiva */
+.tata.is-cachupin .wheel-box {
+  left: 60.455%; top: 70.521%; width: 35.4%;
+  transform: translate(-50%, -50%) rotate(4.75deg) scaleY(.7043);
+  filter: none;
+}
+.tata.is-cachupin .wheel-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.tata.is-cachupin .tata-hand { left: 56.597%; top: 61.719%; width: 19.792%; height: 10.764%; filter: drop-shadow(-1px 2px 2px rgba(40,10,0,.3)); }
+.tata.is-cachupin.spinning .wheel { animation-name: wheelspin; }
+.ruleta-pick { display: flex; gap: 8px; }
+.ruleta-pick label { flex: 1; display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; background: #fff; cursor: pointer; font-size: 15px; }
+.ruleta-pick input { accent-color: var(--red); }
+
 .warn {
   background: #fff4d6;
   border: 1px solid #e8d08a;
@@ -434,6 +447,15 @@ textarea { min-height: 110px; resize: vertical; }
       </div>
 
       <div class="card">
+        <span class="lbl">Quién gira la ruleta</span>
+        <div class="ruleta-pick" role="radiogroup">
+          <label><input type="radio" name="ruleta" value="tata" checked> El Tata</label>
+          <label><input type="radio" name="ruleta" value="cachupin"> Cachupín</label>
+        </div>
+        <p class="hint">Cada persona va a ver en su link la ruleta que elijas.</p>
+      </div>
+
+      <div class="card">
         <div class="pair">
           <div>
             <label class="lbl" for="budget">Presupuesto</label>
@@ -460,7 +482,7 @@ textarea { min-height: 110px; resize: vertical; }
     <div id="drawing" hidden>
       <div class="card drum-wrap">
         <div class="tata spinning" id="drumOrg"><div class="tata-fig"><img class="tata-img" src="tata-pascuero.webp" width="720" height="960" alt="El Tata vestido de Viejo Pascuero con una ruleta en la guata"><div class="wheel-box"><svg class="wheel" viewBox="-100 -100 200 200" aria-hidden="true"><circle r="99" fill="#c9a227"/><circle r="96.5" fill="#8f7018"/><path d="M0 0L0.00 -96.00A96 96 0 0 1 48.00 -83.14Z" fill="#a01c1c"/><text x="17.08" y="-63.75" transform="rotate(15.0 17.08 -63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">★</text><path d="M0 0L48.00 -83.14A96 96 0 0 1 83.14 -48.00Z" fill="#1e5c3a"/><text x="46.67" y="-46.67" transform="rotate(45.0 46.67 -46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">🎁</text><path d="M0 0L83.14 -48.00A96 96 0 0 1 96.00 0.00Z" fill="#c9a227"/><text x="63.75" y="-17.08" transform="rotate(75.0 63.75 -17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">★</text><path d="M0 0L96.00 0.00A96 96 0 0 1 83.14 48.00Z" fill="#fff4dc"/><text x="63.75" y="17.08" transform="rotate(105.0 63.75 17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">🎁</text><path d="M0 0L83.14 48.00A96 96 0 0 1 48.00 83.14Z" fill="#a01c1c"/><text x="46.67" y="46.67" transform="rotate(135.0 46.67 46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">★</text><path d="M0 0L48.00 83.14A96 96 0 0 1 0.00 96.00Z" fill="#1e5c3a"/><text x="17.08" y="63.75" transform="rotate(165.0 17.08 63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">🎁</text><path d="M0 0L0.00 96.00A96 96 0 0 1 -48.00 83.14Z" fill="#c9a227"/><text x="-17.08" y="63.75" transform="rotate(195.0 -17.08 63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">★</text><path d="M0 0L-48.00 83.14A96 96 0 0 1 -83.14 48.00Z" fill="#fff4dc"/><text x="-46.67" y="46.67" transform="rotate(225.0 -46.67 46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">🎁</text><path d="M0 0L-83.14 48.00A96 96 0 0 1 -96.00 0.00Z" fill="#a01c1c"/><text x="-63.75" y="17.08" transform="rotate(255.0 -63.75 17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">★</text><path d="M0 0L-96.00 0.00A96 96 0 0 1 -83.14 -48.00Z" fill="#1e5c3a"/><text x="-63.75" y="-17.08" transform="rotate(285.0 -63.75 -17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">🎁</text><path d="M0 0L-83.14 -48.00A96 96 0 0 1 -48.00 -83.14Z" fill="#c9a227"/><text x="-46.67" y="-46.67" transform="rotate(315.0 -46.67 -46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">★</text><path d="M0 0L-48.00 -83.14A96 96 0 0 1 -0.00 -96.00Z" fill="#fff4dc"/><text x="-17.08" y="-63.75" transform="rotate(345.0 -17.08 -63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">🎁</text><g stroke="#f0d789" stroke-width="1.2"><line x1="0" y1="0" x2="0.00" y2="-96.00"/><line x1="0" y1="0" x2="48.00" y2="-83.14"/><line x1="0" y1="0" x2="83.14" y2="-48.00"/><line x1="0" y1="0" x2="96.00" y2="0.00"/><line x1="0" y1="0" x2="83.14" y2="48.00"/><line x1="0" y1="0" x2="48.00" y2="83.14"/><line x1="0" y1="0" x2="0.00" y2="96.00"/><line x1="0" y1="0" x2="-48.00" y2="83.14"/><line x1="0" y1="0" x2="-83.14" y2="48.00"/><line x1="0" y1="0" x2="-96.00" y2="0.00"/><line x1="0" y1="0" x2="-83.14" y2="-48.00"/><line x1="0" y1="0" x2="-48.00" y2="-83.14"/></g><circle cx="0.00" cy="-90.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="45.00" cy="-77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="77.94" cy="-45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="90.00" cy="0.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="77.94" cy="45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="45.00" cy="77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="0.00" cy="90.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-45.00" cy="77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-77.94" cy="45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-90.00" cy="0.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-77.94" cy="-45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-45.00" cy="-77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/></svg><svg class="wheel-hub" viewBox="-100 -100 200 200" aria-hidden="true"><circle r="22" fill="#c9a227" stroke="#8f7018" stroke-width="2"/><circle r="15" fill="#9b1b1b"/><text y="1" text-anchor="middle" dominant-baseline="central" font-size="18" font-family="Georgia,serif" font-weight="700" fill="#fff8e8">?</text></svg></div><span class="wheel-pin" aria-hidden="true"></span><img class="tata-hand" src="tata-mano.webp" alt="" aria-hidden="true"></div><div class="drum-window tata-window"><div class="drum-reel" id="reelOrg"> </div></div></div>
-        <p class="drum-caption">El Tata está girando la ruleta. ¡Jo, jo, jo!</p>
+        <p class="drum-caption tata-caption">El Tata está girando la ruleta. ¡Jo, jo, jo!</p>
       </div>
     </div>
 
@@ -477,7 +499,7 @@ textarea { min-height: 110px; resize: vertical; }
     <h1 class="hello" id="hello">Hola</h1>
     <hr class="hr-gold">
     <div id="revealReady">
-      <p class="lede">El Tata tiene la ruleta lista en la guata. Gírala para saber a quién le regalas.</p>
+      <p class="lede" id="readyLede">El Tata tiene la ruleta lista en la guata. Gírala para saber a quién le regalas.</p>
       <div class="card drum-wrap tata-preview">
         <div class="tata"><div class="tata-fig"><img class="tata-img" src="tata-pascuero.webp" width="720" height="960" alt="El Tata vestido de Viejo Pascuero con una ruleta en la guata"><div class="wheel-box"><svg class="wheel" viewBox="-100 -100 200 200" aria-hidden="true"><circle r="99" fill="#c9a227"/><circle r="96.5" fill="#8f7018"/><path d="M0 0L0.00 -96.00A96 96 0 0 1 48.00 -83.14Z" fill="#a01c1c"/><text x="17.08" y="-63.75" transform="rotate(15.0 17.08 -63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">★</text><path d="M0 0L48.00 -83.14A96 96 0 0 1 83.14 -48.00Z" fill="#1e5c3a"/><text x="46.67" y="-46.67" transform="rotate(45.0 46.67 -46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">🎁</text><path d="M0 0L83.14 -48.00A96 96 0 0 1 96.00 0.00Z" fill="#c9a227"/><text x="63.75" y="-17.08" transform="rotate(75.0 63.75 -17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">★</text><path d="M0 0L96.00 0.00A96 96 0 0 1 83.14 48.00Z" fill="#fff4dc"/><text x="63.75" y="17.08" transform="rotate(105.0 63.75 17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">🎁</text><path d="M0 0L83.14 48.00A96 96 0 0 1 48.00 83.14Z" fill="#a01c1c"/><text x="46.67" y="46.67" transform="rotate(135.0 46.67 46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">★</text><path d="M0 0L48.00 83.14A96 96 0 0 1 0.00 96.00Z" fill="#1e5c3a"/><text x="17.08" y="63.75" transform="rotate(165.0 17.08 63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">🎁</text><path d="M0 0L0.00 96.00A96 96 0 0 1 -48.00 83.14Z" fill="#c9a227"/><text x="-17.08" y="63.75" transform="rotate(195.0 -17.08 63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">★</text><path d="M0 0L-48.00 83.14A96 96 0 0 1 -83.14 48.00Z" fill="#fff4dc"/><text x="-46.67" y="46.67" transform="rotate(225.0 -46.67 46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">🎁</text><path d="M0 0L-83.14 48.00A96 96 0 0 1 -96.00 0.00Z" fill="#a01c1c"/><text x="-63.75" y="17.08" transform="rotate(255.0 -63.75 17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">★</text><path d="M0 0L-96.00 0.00A96 96 0 0 1 -83.14 -48.00Z" fill="#1e5c3a"/><text x="-63.75" y="-17.08" transform="rotate(285.0 -63.75 -17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">🎁</text><path d="M0 0L-83.14 -48.00A96 96 0 0 1 -48.00 -83.14Z" fill="#c9a227"/><text x="-46.67" y="-46.67" transform="rotate(315.0 -46.67 -46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">★</text><path d="M0 0L-48.00 -83.14A96 96 0 0 1 -0.00 -96.00Z" fill="#fff4dc"/><text x="-17.08" y="-63.75" transform="rotate(345.0 -17.08 -63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">🎁</text><g stroke="#f0d789" stroke-width="1.2"><line x1="0" y1="0" x2="0.00" y2="-96.00"/><line x1="0" y1="0" x2="48.00" y2="-83.14"/><line x1="0" y1="0" x2="83.14" y2="-48.00"/><line x1="0" y1="0" x2="96.00" y2="0.00"/><line x1="0" y1="0" x2="83.14" y2="48.00"/><line x1="0" y1="0" x2="48.00" y2="83.14"/><line x1="0" y1="0" x2="0.00" y2="96.00"/><line x1="0" y1="0" x2="-48.00" y2="83.14"/><line x1="0" y1="0" x2="-83.14" y2="48.00"/><line x1="0" y1="0" x2="-96.00" y2="0.00"/><line x1="0" y1="0" x2="-83.14" y2="-48.00"/><line x1="0" y1="0" x2="-48.00" y2="-83.14"/></g><circle cx="0.00" cy="-90.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="45.00" cy="-77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="77.94" cy="-45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="90.00" cy="0.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="77.94" cy="45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="45.00" cy="77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="0.00" cy="90.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-45.00" cy="77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-77.94" cy="45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-90.00" cy="0.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-77.94" cy="-45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-45.00" cy="-77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/></svg><svg class="wheel-hub" viewBox="-100 -100 200 200" aria-hidden="true"><circle r="22" fill="#c9a227" stroke="#8f7018" stroke-width="2"/><circle r="15" fill="#9b1b1b"/><text y="1" text-anchor="middle" dominant-baseline="central" font-size="18" font-family="Georgia,serif" font-weight="700" fill="#fff8e8">?</text></svg></div><span class="wheel-pin" aria-hidden="true"></span><img class="tata-hand" src="tata-mano.webp" alt="" aria-hidden="true"></div></div>
       </div>
@@ -486,7 +508,7 @@ textarea { min-height: 110px; resize: vertical; }
     <div id="revealSpin" hidden>
       <div class="card drum-wrap">
         <div class="tata spinning" id="drumRev"><div class="tata-fig"><img class="tata-img" src="tata-pascuero.webp" width="720" height="960" alt="El Tata vestido de Viejo Pascuero con una ruleta en la guata"><div class="wheel-box"><svg class="wheel" viewBox="-100 -100 200 200" aria-hidden="true"><circle r="99" fill="#c9a227"/><circle r="96.5" fill="#8f7018"/><path d="M0 0L0.00 -96.00A96 96 0 0 1 48.00 -83.14Z" fill="#a01c1c"/><text x="17.08" y="-63.75" transform="rotate(15.0 17.08 -63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">★</text><path d="M0 0L48.00 -83.14A96 96 0 0 1 83.14 -48.00Z" fill="#1e5c3a"/><text x="46.67" y="-46.67" transform="rotate(45.0 46.67 -46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">🎁</text><path d="M0 0L83.14 -48.00A96 96 0 0 1 96.00 0.00Z" fill="#c9a227"/><text x="63.75" y="-17.08" transform="rotate(75.0 63.75 -17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">★</text><path d="M0 0L96.00 0.00A96 96 0 0 1 83.14 48.00Z" fill="#fff4dc"/><text x="63.75" y="17.08" transform="rotate(105.0 63.75 17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">🎁</text><path d="M0 0L83.14 48.00A96 96 0 0 1 48.00 83.14Z" fill="#a01c1c"/><text x="46.67" y="46.67" transform="rotate(135.0 46.67 46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">★</text><path d="M0 0L48.00 83.14A96 96 0 0 1 0.00 96.00Z" fill="#1e5c3a"/><text x="17.08" y="63.75" transform="rotate(165.0 17.08 63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">🎁</text><path d="M0 0L0.00 96.00A96 96 0 0 1 -48.00 83.14Z" fill="#c9a227"/><text x="-17.08" y="63.75" transform="rotate(195.0 -17.08 63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">★</text><path d="M0 0L-48.00 83.14A96 96 0 0 1 -83.14 48.00Z" fill="#fff4dc"/><text x="-46.67" y="46.67" transform="rotate(225.0 -46.67 46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">🎁</text><path d="M0 0L-83.14 48.00A96 96 0 0 1 -96.00 0.00Z" fill="#a01c1c"/><text x="-63.75" y="17.08" transform="rotate(255.0 -63.75 17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">★</text><path d="M0 0L-96.00 0.00A96 96 0 0 1 -83.14 -48.00Z" fill="#1e5c3a"/><text x="-63.75" y="-17.08" transform="rotate(285.0 -63.75 -17.08)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#fff8e8">🎁</text><path d="M0 0L-83.14 -48.00A96 96 0 0 1 -48.00 -83.14Z" fill="#c9a227"/><text x="-46.67" y="-46.67" transform="rotate(315.0 -46.67 -46.67)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">★</text><path d="M0 0L-48.00 -83.14A96 96 0 0 1 -0.00 -96.00Z" fill="#fff4dc"/><text x="-17.08" y="-63.75" transform="rotate(345.0 -17.08 -63.75)" text-anchor="middle" dominant-baseline="central" font-size="22" fill="#7a1515">🎁</text><g stroke="#f0d789" stroke-width="1.2"><line x1="0" y1="0" x2="0.00" y2="-96.00"/><line x1="0" y1="0" x2="48.00" y2="-83.14"/><line x1="0" y1="0" x2="83.14" y2="-48.00"/><line x1="0" y1="0" x2="96.00" y2="0.00"/><line x1="0" y1="0" x2="83.14" y2="48.00"/><line x1="0" y1="0" x2="48.00" y2="83.14"/><line x1="0" y1="0" x2="0.00" y2="96.00"/><line x1="0" y1="0" x2="-48.00" y2="83.14"/><line x1="0" y1="0" x2="-83.14" y2="48.00"/><line x1="0" y1="0" x2="-96.00" y2="0.00"/><line x1="0" y1="0" x2="-83.14" y2="-48.00"/><line x1="0" y1="0" x2="-48.00" y2="-83.14"/></g><circle cx="0.00" cy="-90.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="45.00" cy="-77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="77.94" cy="-45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="90.00" cy="0.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="77.94" cy="45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="45.00" cy="77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="0.00" cy="90.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-45.00" cy="77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-77.94" cy="45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-90.00" cy="0.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-77.94" cy="-45.00" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/><circle cx="-45.00" cy="-77.94" r="3" fill="#f0d789" stroke="#8f7018" stroke-width="1"/></svg><svg class="wheel-hub" viewBox="-100 -100 200 200" aria-hidden="true"><circle r="22" fill="#c9a227" stroke="#8f7018" stroke-width="2"/><circle r="15" fill="#9b1b1b"/><text y="1" text-anchor="middle" dominant-baseline="central" font-size="18" font-family="Georgia,serif" font-weight="700" fill="#fff8e8">?</text></svg></div><span class="wheel-pin" aria-hidden="true"></span><img class="tata-hand" src="tata-mano.webp" alt="" aria-hidden="true"></div><div class="drum-window tata-window"><div class="drum-reel" id="reelRev"> </div></div></div>
-        <p class="drum-caption">El Tata está girando la ruleta. ¡Jo, jo, jo!</p>
+        <p class="drum-caption tata-caption">El Tata está girando la ruleta. ¡Jo, jo, jo!</p>
       </div>
     </div>
     <div id="revealDone" class="reveal-box" hidden>
@@ -792,6 +814,7 @@ textarea { min-height: 110px; resize: vertical; }
       exclusions: exclusions,
       budget: $("budget").value.trim(),
       date: $("dateField").value.trim(),
+      ruleta: ruleta,
       tokens: prev.tokens || null
     };
     try { localStorage.setItem(STORE, JSON.stringify(data)); } catch (e) {}
@@ -802,6 +825,7 @@ textarea { min-height: 110px; resize: vertical; }
       exclusions: exclusions,
       budget: $("budget").value.trim(),
       date: $("dateField").value.trim(),
+      ruleta: ruleta,
       tokens: tokens
     };
     try { localStorage.setItem(STORE, JSON.stringify(data)); } catch (e) {}
@@ -810,13 +834,59 @@ textarea { min-height: 110px; resize: vertical; }
     try { return JSON.parse(localStorage.getItem(STORE) || "null"); } catch (e) { return null; }
   }
 
+
+  /* ---- quien gira la ruleta: Tata (por defecto) o Cachupin ---- */
+  var RULETAS = {
+    tata: null,
+    cachupin: {
+      img: "cachupin-pascuero.webp",
+      over: "cachupin-pata.webp",
+      alt: "Cachupín vestido de Viejo Pascuero con una ruleta en la guata",
+      wheel: "<svg class=\"wheel\" viewBox=\"-100 -100 200 200\" aria-hidden=\"true\"><path d=\"M0 0L84.34 -53.73A100 100 0 0 1 99.62 8.72Z\" fill=\"#fbe9db\"/><path d=\"M0 0L99.62 8.72A100 100 0 0 1 54.46 83.87Z\" fill=\"#c7201a\"/><path d=\"M0 0L54.46 83.87A100 100 0 0 1 2.62 99.97Z\" fill=\"#fbe9db\"/><path d=\"M0 0L2.62 99.97A100 100 0 0 1 -45.40 89.10Z\" fill=\"#c7201a\"/><path d=\"M0 0L-45.40 89.10A100 100 0 0 1 -94.55 32.56Z\" fill=\"#30663a\"/><path d=\"M0 0L-94.55 32.56A100 100 0 0 1 -89.49 -44.62Z\" fill=\"#c7201a\"/><path d=\"M0 0L-89.49 -44.62A100 100 0 0 1 -39.07 -92.05Z\" fill=\"#fbe9db\"/><path d=\"M0 0L-39.07 -92.05A100 100 0 0 1 35.84 -93.36Z\" fill=\"#c7201a\"/><path d=\"M0 0L35.84 -93.36A100 100 0 0 1 84.34 -53.73Z\" fill=\"#30663a\"/><g stroke=\"#d9b45a\" stroke-width=\"1.6\"><line x1=\"0\" y1=\"0\" x2=\"84.34\" y2=\"-53.73\"/><line x1=\"0\" y1=\"0\" x2=\"99.62\" y2=\"8.72\"/><line x1=\"0\" y1=\"0\" x2=\"54.46\" y2=\"83.87\"/><line x1=\"0\" y1=\"0\" x2=\"2.62\" y2=\"99.97\"/><line x1=\"0\" y1=\"0\" x2=\"-45.40\" y2=\"89.10\"/><line x1=\"0\" y1=\"0\" x2=\"-94.55\" y2=\"32.56\"/><line x1=\"0\" y1=\"0\" x2=\"-89.49\" y2=\"-44.62\"/><line x1=\"0\" y1=\"0\" x2=\"-39.07\" y2=\"-92.05\"/><line x1=\"0\" y1=\"0\" x2=\"35.84\" y2=\"-93.36\"/></g></svg><svg class=\"wheel-shade\" viewBox=\"-100 -100 200 200\" aria-hidden=\"true\"><defs><radialGradient id=\"cwShade\" cx=\"35%\" cy=\"30%\" r=\"80%\"><stop offset=\"0\" stop-color=\"#fff\" stop-opacity=\".16\"/><stop offset=\".55\" stop-color=\"#fff\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#2a0a00\" stop-opacity=\".22\"/></radialGradient></defs><circle r=\"100\" fill=\"url(#cwShade)\"/><circle r=\"98.6\" fill=\"none\" stroke=\"#c9a03c\" stroke-width=\"2.8\"/></svg>",
+      btn: "Girar la ruleta de Cachupín",
+      cap: "Cachupín está girando la ruleta. ¡Guau, guau!",
+      lede: "Cachupín tiene la ruleta lista en la guata. Gírala para saber a quién le regalas."
+    }
+  };
+  var TATA_HTML = {};
+  var ruleta = "tata";
+  function ruletaFromUrl() {
+    var v = (new URLSearchParams(location.search).get("ruleta") || "").toLowerCase();
+    if (!v && location.hash) v = (new URLSearchParams(location.hash.replace(/^#/, "")).get("ruleta") || "").toLowerCase();
+    return RULETAS.hasOwnProperty(v) ? v : "";
+  }
+  function applyRuleta(v) {
+    ruleta = RULETAS.hasOwnProperty(v) ? v : "tata";
+    var cfg = RULETAS[ruleta];
+    var figs = document.querySelectorAll(".tata");
+    for (var i = 0; i < figs.length; i++) {
+      var box = figs[i].querySelector(".tata-fig");
+      if (!TATA_HTML[i]) TATA_HTML[i] = box.innerHTML;
+      if (cfg) {
+        box.innerHTML = '<img class="tata-img" src="' + cfg.img + '" width="720" height="960" alt="' + cfg.alt + '">' +
+          '<div class="wheel-box">' + cfg.wheel.replace(/cwShade/g, "cwShade" + i) + '</div>' +
+          '<img class="tata-hand" src="' + cfg.over + '" alt="" aria-hidden="true">';
+        figs[i].classList.add("is-" + ruleta);
+      } else {
+        box.innerHTML = TATA_HTML[i];
+        figs[i].classList.remove("is-cachupin");
+      }
+    }
+    var caps = document.querySelectorAll(".tata-caption");
+    for (var j = 0; j < caps.length; j++) caps[j].textContent = cfg ? cfg.cap : "El Tata está girando la ruleta. ¡Jo, jo, jo!";
+    $("btnSpin").textContent = cfg ? cfg.btn : "Girar la ruleta del Tata";
+    $("readyLede").textContent = cfg ? cfg.lede : "El Tata tiene la ruleta lista en la guata. Gírala para saber a quién le regalas.";
+    var radios = document.querySelectorAll('input[name="ruleta"]');
+    for (var k = 0; k < radios.length; k++) radios[k].checked = radios[k].value === ruleta;
+  }
+
   function baseUrl() {
     var path = location.pathname.replace(/index\.html$/, "");
     if (path.slice(-1) !== "/") path += "/";
     return location.origin + path;
   }
   function personUrl(token) {
-    return baseUrl() + "?r=" + encodeURIComponent(token);
+    return baseUrl() + "?r=" + encodeURIComponent(token) + (ruleta !== "tata" ? "&ruleta=" + ruleta : "");
   }
   function waMessage(name, url) {
     return "Hola " + name + ", te toca participar en el Amigo Secreto de la familia. Abre este link y gira la tómbola para ver a quién le regalas: " + url;
@@ -953,6 +1023,7 @@ textarea { min-height: 110px; resize: vertical; }
       exclusions: exclusions,
       budget: $("budget").value.trim(),
       date: $("dateField").value.trim(),
+      ruleta: ruleta,
       tokens: null
     })); } catch (e) {}
     showSetup();
@@ -1105,6 +1176,19 @@ textarea { min-height: 110px; resize: vertical; }
       resetDraw();
     }
   });
+
+  var stored0 = loadStore();
+  applyRuleta(ruletaFromUrl() || (tokenFromUrl() ? "tata" : (stored0 && stored0.ruleta) || "tata"));
+  var radiosR = document.querySelectorAll('input[name="ruleta"]');
+  for (var ri = 0; ri < radiosR.length; ri++) {
+    radiosR[ri].addEventListener("change", function (e) {
+      applyRuleta(e.target.value);
+      var st = loadStore() || {};
+      st.ruleta = ruleta;
+      try { localStorage.setItem(STORE, JSON.stringify(st)); } catch (err) {}
+      if (st.tokens && st.names && !$("results").hidden) showResults(st.tokens, st.names);
+    });
+  }
 
   var tok = tokenFromUrl();
   if (tok) {
