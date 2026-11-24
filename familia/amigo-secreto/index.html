@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#7a1c1c">
+<title>Amigo Secreto de la Familia</title>
+<meta name="description" content="Gira la tómbola y descubre a quién le toca tu regalo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Amigo Secreto de la Familia">
+<meta property="og:description" content="Gira la tómbola y descubre a quién le toca tu regalo.">
+<meta property="og:image" content="https://felipeverallanos-cmd.github.io/eventos-alto/familia/amigo-secreto/familia.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1000">
+<meta property="og:url" content="https://felipeverallanos-cmd.github.io/eventos-alto/familia/amigo-secreto/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amigo Secreto de la Familia">
+<meta name="twitter:description" content="Gira la tómbola y descubre a quién le toca tu regalo.">
+<meta name="twitter:image" content="https://felipeverallanos-cmd.github.io/eventos-alto/familia/amigo-secreto/familia.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%237a1c1c' stroke='%23d4af37' stroke-width='2'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #f6efe3;
+  --bg-2: #efe4d0;
+  --card: #fffaf2;
+  --ink: #2c1810;
+  --muted: #6b5246;
+  --red: #9b1b1b;
+  --red-dark: #7a1515;
+  --green: #1e5c3a;
+  --green-dark: #16462c;
+  --gold: #c9a227;
+  --gold-soft: #e8d39a;
+  --line: #ead9b8;
+  --shadow: 0 10px 30px rgba(80, 24, 16, .12);
+  --serif: Georgia, "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 22px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: var(--sans); }
+body {
+  min-height: 100dvh;
+  background:
+    radial-gradient(1200px 500px at 50% -80px, #f3d9a6 0%, transparent 60%),
+    radial-gradient(800px 400px at 100% 100%, #dce8d8 0%, transparent 50%),
+    var(--bg);
+}
+.snow { pointer-events: none; position: fixed; inset: 0; overflow: hidden; z-index: 0; }
+.snow span {
+  position: absolute; top: -10px; width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,.85); box-shadow: 0 0 6px rgba(255,255,255,.6);
+  animation: fall linear infinite;
+  opacity: .55;
+}
+@keyframes fall {
+  to { transform: translateY(110vh) translateX(20px); }
+}
+.wrap {
+  position: relative; z-index: 1;
+  width: min(440px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 18px 0 48px;
+}
+.hero {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  max-height: 220px;
+  background: linear-gradient(145deg, #7a1c1c 0%, #5a1a22 42%, #1e5c3a 100%);
+  box-shadow: var(--shadow), 0 0 0 3px var(--gold-soft);
+  margin-bottom: 18px;
+}
+.hero img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  display: block;
+}
+.hero-fallback {
+  display: none;
+  position: absolute; inset: 0;
+  align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 48px;
+  color: #fff8e8;
+  letter-spacing: .04em;
+  text-shadow: 0 2px 10px rgba(0,0,0,.35);
+}
+.hero.no-photo .hero-fallback { display: flex; }
+.hero.no-photo img { display: none; }
+
+h1 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.15;
+  color: var(--red-dark);
+}
+.lede {
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 8px 0 18px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  margin-bottom: 14px;
+}
+label.lbl, .lbl {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--red-dark);
+  margin-bottom: 6px;
+}
+input[type="text"], textarea, select {
+  width: 100%;
+  border: 1px solid #e2d0b0;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 11px 12px;
+  font: 16px/1.3 var(--sans);
+  outline: none;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, .25);
+}
+textarea { min-height: 110px; resize: vertical; }
+.row { display: flex; gap: 8px; }
+.row > * { flex: 1; }
+.hint { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; width: 100%;
+  border: 0; border-radius: 14px;
+  padding: 13px 16px;
+  font: 700 16px/1 var(--sans);
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff8e8;
+  background: var(--red);
+  box-shadow: 0 4px 0 var(--red-dark);
+  transition: transform .12s ease, filter .12s ease;
+}
+.btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--red-dark); }
+.btn:disabled { opacity: .55; cursor: default; transform: none; }
+.btn-green { background: var(--green); box-shadow: 0 4px 0 var(--green-dark); }
+.btn-green:active { box-shadow: 0 2px 0 var(--green-dark); }
+.btn-ghost {
+  background: transparent; color: var(--red-dark);
+  box-shadow: none; border: 1px solid var(--line);
+}
+.btn-ghost:active { box-shadow: none; }
+.btn-sm { padding: 9px 10px; font-size: 13px; border-radius: 11px; box-shadow: 0 3px 0 var(--red-dark); }
+.btn-sm.btn-green { box-shadow: 0 3px 0 var(--green-dark); }
+.btn-sm.btn-ghost { box-shadow: none; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #f3e6cf; color: var(--ink);
+  border-radius: 999px; padding: 5px 8px 5px 12px;
+  font-size: 13px;
+}
+.chip button {
+  border: 0; background: transparent; color: var(--red);
+  font-size: 16px; line-height: 1; cursor: pointer; padding: 0 4px;
+}
+
+.err {
+  display: none;
+  background: #fde8e8;
+  color: #8a1515;
+  border: 1px solid #f3c0c0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  margin: 10px 0;
+  line-height: 1.4;
+}
+.err.show { display: block; }
+
+.drum-wrap { text-align: center; padding: 10px 0 6px; }
+.drum { width: 230px; margin: 0 auto; position: relative; }
+.drum-ring {
+  height: 14px;
+  background: linear-gradient(180deg, #f0d789, #c9a227 55%, #8f7018);
+  border-radius: 7px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.4) inset;
+  position: relative; z-index: 2;
+}
+.drum-body {
+  height: 148px;
+  margin: -4px 8px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.28), transparent 14%, transparent 86%, rgba(0,0,0,.28)),
+    repeating-linear-gradient(90deg, #7a1212 0 14px, #a01c1c 14px 26px, #8a1515 26px 30px);
+  border-radius: 10px;
+  box-shadow: inset 0 0 22px rgba(0,0,0,.35), 0 12px 22px rgba(80,0,0,.25);
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.drum.spinning .drum-body { animation: drumshake .12s linear infinite; }
+@keyframes drumshake {
+  0% { transform: rotate(-0.6deg); }
+  50% { transform: rotate(0.6deg); }
+  100% { transform: rotate(-0.6deg); }
+}
+.drum-window {
+  width: 168px; height: 58px;
+  background: #fff8e8;
+  border: 3px solid var(--gold);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: inset 0 0 8px rgba(80,40,0,.15);
+}
+.drum-reel {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--red-dark);
+  padding: 0 8px;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.drum-caption { margin-top: 12px; color: var(--muted); font-size: 14px; }
+.warn {
+  background: #fff4d6;
+  border: 1px solid #e8d08a;
+  color: #5c4310;
+  border-radius: 12px;
+  padding: 11px 12px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+.person {
+  border-top: 1px solid var(--line);
+  padding: 12px 0;
+}
+.person:first-child { border-top: 0; padding-top: 0; }
+.person-name { font-weight: 700; margin-bottom: 8px; font-size: 16px; }
+.slug-list { list-style: none; font-size: 13px; color: var(--muted); line-height: 1.6; }
+.slug-list code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  background: #f3e6cf;
+  padding: 1px 5px;
+  border-radius: 5px;
+  color: var(--ink);
+}
+.hello {
+  font-family: var(--serif);
+  font-size: 30px;
+  text-align: center;
+  color: var(--red-dark);
+  margin: 4px 0 8px;
+}
+.center { text-align: center; }
+.reveal-box { padding: 8px 8px 16px; }
+.assignee {
+  font-family: var(--serif);
+  font-size: 20px;
+  text-align: center;
+  margin: 6px 0 14px;
+  color: var(--ink);
+}
+.assignee strong {
+  display: block;
+  font-size: 32px;
+  color: var(--red-dark);
+  margin-top: 4px;
+  line-height: 1.2;
+}
+.portrait-wrap { display: flex; justify-content: center; margin: 8px 0 6px; }
+.portrait {
+  width: 168px; height: 168px;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  box-shadow: 0 10px 24px rgba(80, 20, 20, .22), 0 0 0 6px rgba(201,162,39,.18);
+  overflow: hidden;
+  position: relative;
+  background: #efe4d0;
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.avatar {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(160deg, #9b1b1b 0%, #7a1515 45%, #1e5c3a 100%);
+}
+.avatar[hidden], .portrait img[hidden] { display: none !important; }
+.initials {
+  font-family: var(--serif);
+  font-size: 56px;
+  color: #fff8e8;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-shadow: 0 2px 0 rgba(0,0,0,.2);
+  margin-top: 10px;
+}
+.hat { position: absolute; top: 6px; right: 14px; width: 72px; height: 62px; pointer-events: none; }
+.hat-cone {
+  position: absolute; left: 10px; top: 2px;
+  width: 0; height: 0;
+  border-left: 22px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 46px solid #c41e1e;
+  transform: rotate(24deg);
+  filter: drop-shadow(0 2px 1px rgba(0,0,0,.2));
+}
+.hat-pom {
+  position: absolute; top: -2px; right: 8px;
+  width: 16px; height: 16px; background: #fff; border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  z-index: 2;
+}
+.hat-brim {
+  position: absolute; left: 4px; bottom: 8px;
+  width: 58px; height: 14px; background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0,0,0,.15);
+  transform: rotate(12deg);
+  z-index: 1;
+}
+.meta {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.hr-gold {
+  width: 84px; height: 2px; margin: 10px auto 14px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  border: 0; position: relative;
+}
+#confetti {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 20;
+}
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .snow span, .drum.spinning .drum-body { animation: none; }
+}
+</style>
+</head>
+<body>
+<div class="snow" id="snow" aria-hidden="true"></div>
+<main class="wrap">
+  <header class="hero" id="hero">
+    <img src="familia.jpg" alt="Nuestra familia" id="heroImg">
+    <div class="hero-fallback" id="heroFallback">Familia</div>
+  </header>
+
+  <section id="viewOrganizer">
+    <h1>Amigo Secreto de la Familia</h1>
+    <p class="lede">Escribe los nombres, gira la tómbola y comparte un link por WhatsApp. Cada persona va a ver solo a quién le toca regalarle.</p>
+
+    <div id="setup">
+      <div class="card">
+        <label class="lbl" for="nameInput">Nombres</label>
+        <div class="row">
+          <input id="nameInput" type="text" maxlength="60" placeholder="Nombre y apellido" autocomplete="off">
+          <button type="button" class="btn btn-sm" id="btnAdd" style="flex:0 0 auto;width:auto;padding-left:16px;padding-right:16px">Agregar</button>
+        </div>
+        <div class="chips" id="nameChips"></div>
+        <label class="lbl" for="nameList" style="margin-top:14px">O pégalos, uno por línea</label>
+        <textarea id="nameList" placeholder="Ana&#10;Bruno&#10;Carla"></textarea>
+      </div>
+
+      <div class="card">
+        <span class="lbl">Quiénes no se regalan entre sí</span>
+        <p class="hint">Útil para parejas u otras exclusiones. La regla vale en los dos sentidos: si Ana no le puede regalar a Bruno, Bruno tampoco le puede regalar a Ana.</p>
+        <div class="row" style="margin-top:8px">
+          <select id="exA"><option value="">Persona 1</option></select>
+          <select id="exB"><option value="">Persona 2</option></select>
+        </div>
+        <button type="button" class="btn btn-ghost" id="btnEx" style="margin-top:8px">Agregar exclusión</button>
+        <div class="chips" id="exChips"></div>
+      </div>
+
+      <div class="card">
+        <div class="pair">
+          <div>
+            <label class="lbl" for="budget">Presupuesto</label>
+            <input id="budget" type="text" maxlength="80" placeholder="ej. 15.000 pesos" autocomplete="off">
+          </div>
+          <div>
+            <label class="lbl" for="dateField">Fecha del intercambio</label>
+            <input id="dateField" type="text" maxlength="80" placeholder="ej. 24 de diciembre" autocomplete="off">
+          </div>
+        </div>
+        <p class="hint">Estos datos son opcionales. Si los escribes, cada persona los va a ver junto a su resultado.</p>
+      </div>
+
+      <div class="card" id="slugCard" hidden>
+        <span class="lbl">Fotos de cada persona</span>
+        <p class="hint">Si más adelante agregas un retrato navideño, guárdalo en la carpeta fotos/ con este nombre (minúsculas, sin tildes, espacios como guion):</p>
+        <ul class="slug-list" id="slugList"></ul>
+      </div>
+
+      <p class="err" id="setupErr" role="alert"></p>
+      <button type="button" class="btn" id="btnDraw">Sortear</button>
+    </div>
+
+    <div id="drawing" hidden>
+      <div class="card drum-wrap">
+        <div class="drum spinning" id="drumOrg">
+          <div class="drum-ring"></div>
+          <div class="drum-body"><div class="drum-window"><div class="drum-reel" id="reelOrg"> </div></div></div>
+          <div class="drum-ring"></div>
+        </div>
+        <p class="drum-caption">La tómbola está girando</p>
+      </div>
+    </div>
+
+    <div id="results" hidden>
+      <div class="card">
+        <p class="warn" id="warnPlay">Listo. Comparte a cada persona solo su link. Si tú también juegas, no abras los links de los demás: ahí está el resultado de cada uno.</p>
+        <div id="peopleList"></div>
+      </div>
+      <button type="button" class="btn btn-ghost" id="btnAgain" style="margin-top:4px">Nuevo sorteo</button>
+    </div>
+  </section>
+
+  <section id="viewReveal" hidden>
+    <h1 class="hello" id="hello">Hola</h1>
+    <hr class="hr-gold">
+    <div id="revealReady">
+      <p class="lede">Gira la tómbola para saber a quién le regalas.</p>
+      <button type="button" class="btn" id="btnSpin">Girar la tómbola</button>
+    </div>
+    <div id="revealSpin" hidden>
+      <div class="card drum-wrap">
+        <div class="drum spinning" id="drumRev">
+          <div class="drum-ring"></div>
+          <div class="drum-body"><div class="drum-window"><div class="drum-reel" id="reelRev"> </div></div></div>
+          <div class="drum-ring"></div>
+        </div>
+        <p class="drum-caption">La tómbola está girando</p>
+      </div>
+    </div>
+    <div id="revealDone" class="reveal-box" hidden>
+      <p class="assignee">Te toca regalarle a <strong id="assigneeName"></strong></p>
+      <div class="portrait-wrap">
+        <div class="portrait" id="portrait">
+          <img id="portraitImg" alt="" hidden>
+          <div class="avatar" id="portraitAvatar">
+            <span class="hat" aria-hidden="true"><span class="hat-pom"></span><span class="hat-cone"></span><span class="hat-brim"></span></span>
+            <span class="initials" id="portraitIni"></span>
+          </div>
+        </div>
+      </div>
+      <p class="meta" id="revealMeta"></p>
+    </div>
+    <p class="err" id="revealErr" role="alert"></p>
+  </section>
+</main>
+<canvas id="confetti"></canvas>
+<script>
+(function () {
+  "use strict";
+
+  var KEY = "FamiliaVeraAS2026";
+  var STORE = "amigo_secreto_familia_v1";
+  var REDUCE = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var SPIN_MS = REDUCE ? 250 : 2800;
+
+  function $(id) { return document.getElementById(id); }
+
+  /* ---- slug: lowercase, no accents, spaces and punctuation to hyphen ---- */
+  function slugify(name) {
+    return String(name || "")
+      .trim()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+  function initials(name) {
+    var parts = String(name || "").trim().split(/\s+/).filter(Boolean);
+    if (!parts.length) return "?";
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+  }
+
+  function utf8Bytes(str) { return new TextEncoder().encode(str); }
+  function xorBytes(bytes, keyStr) {
+    var key = utf8Bytes(keyStr);
+    var out = new Uint8Array(bytes.length);
+    for (var i = 0; i < bytes.length; i++) out[i] = bytes[i] ^ key[i % key.length];
+    return out;
+  }
+  function b64url(bytes) {
+    var bin = "";
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+  }
+  function unb64url(token) {
+    var b64 = String(token || "").replace(/-/g, "+").replace(/_/g, "/");
+    while (b64.length % 4) b64 += "=";
+    var bin = atob(b64);
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return bytes;
+  }
+  function encodeResult(data) {
+    var json = JSON.stringify({
+      n: data.n,
+      a: data.a,
+      p: data.p || "",
+      d: data.d || "",
+      l: data.l || []
+    });
+    return b64url(xorBytes(utf8Bytes(json), KEY));
+  }
+  function decodeResult(token) {
+    var json = new TextDecoder().decode(xorBytes(unb64url(token), KEY));
+    var o = JSON.parse(json);
+    if (!o || !o.n || !o.a) throw new Error("payload");
+    return o;
+  }
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  /* Derangement with bidirectional exclusions. Retry, then backtrack. */
+  function drawAssignment(names, exclusions) {
+    var n = names.length;
+    var banned = {};
+    exclusions.forEach(function (pair) {
+      banned[pair[0] + "\0" + pair[1]] = true;
+      banned[pair[1] + "\0" + pair[0]] = true;
+    });
+    var allowed = names.map(function (g) {
+      return names.filter(function (r) {
+        return r !== g && !banned[g + "\0" + r];
+      });
+    });
+    for (var i = 0; i < n; i++) if (!allowed[i].length) return null;
+
+    var t, ok, assign, remaining, order, g, opts, r, k;
+    for (t = 0; t < 8000; t++) {
+      remaining = {};
+      names.forEach(function (nm) { remaining[nm] = true; });
+      assign = {};
+      order = shuffle(names);
+      ok = true;
+      for (k = 0; k < order.length; k++) {
+        g = order[k];
+        opts = allowed[names.indexOf(g)].filter(function (x) { return remaining[x]; });
+        if (!opts.length) { ok = false; break; }
+        r = opts[Math.floor(Math.random() * opts.length)];
+        assign[g] = r;
+        delete remaining[r];
+      }
+      if (ok) return assign;
+    }
+
+    var used = {};
+    assign = {};
+    order = shuffle(names.map(function (_, idx) { return idx; }));
+    function bt(step) {
+      if (step === n) return true;
+      g = names[order[step]];
+      opts = shuffle(allowed[names.indexOf(g)].filter(function (x) { return !used[x]; }));
+      for (var j = 0; j < opts.length; j++) {
+        r = opts[j];
+        used[r] = true;
+        assign[g] = r;
+        if (bt(step + 1)) return true;
+        delete used[r];
+        delete assign[g];
+      }
+      return false;
+    }
+    return bt(0) ? assign : null;
+  }
+
+  function parseNamesFromText(text) {
+    var seen = {};
+    var list = [];
+    String(text || "").split(/\r?\n/).forEach(function (line) {
+      var nm = line.replace(/\s+/g, " ").trim();
+      if (!nm) return;
+      var key = nm.toLowerCase();
+      if (seen[key]) return;
+      seen[key] = true;
+      list.push(nm);
+    });
+    return list;
+  }
+  function namesFromUI() {
+    return parseNamesFromText($("nameList").value);
+  }
+  function setNames(list) {
+    $("nameList").value = list.join("\n");
+    renderNameChips();
+    fillExclusionSelects();
+    renderSlugHelp();
+    persistSetup();
+  }
+  function addName(raw) {
+    var nm = String(raw || "").replace(/\s+/g, " ").trim();
+    if (!nm) return;
+    var list = namesFromUI();
+    var exists = list.some(function (x) { return x.toLowerCase() === nm.toLowerCase(); });
+    if (exists) {
+      showErr("setupErr", "Ese nombre ya está en la lista. Si son dos personas, distínguelas, por ejemplo Ana y Ana T.");
+      return;
+    }
+    hideErr("setupErr");
+    list.push(nm);
+    $("nameInput").value = "";
+    setNames(list);
+  }
+
+  var exclusions = [];
+
+  function pairKey(a, b) {
+    return [a, b].slice().sort(function (x, y) { return x.localeCompare(y, "es"); }).join("\0");
+  }
+  function addExclusion(a, b) {
+    if (!a || !b || a === b) {
+      showErr("setupErr", "Elige dos personas distintas para la exclusión.");
+      return;
+    }
+    var k = pairKey(a, b);
+    if (exclusions.some(function (p) { return pairKey(p[0], p[1]) === k; })) return;
+    exclusions.push([a, b]);
+    hideErr("setupErr");
+    renderExChips();
+    persistSetup();
+  }
+  function pruneExclusions(list) {
+    var set = {};
+    list.forEach(function (n) { set[n] = true; });
+    exclusions = exclusions.filter(function (p) { return set[p[0]] && set[p[1]]; });
+  }
+
+  function renderNameChips() {
+    var list = namesFromUI();
+    var box = $("nameChips");
+    box.innerHTML = "";
+    list.forEach(function (nm) {
+      var el = document.createElement("span");
+      el.className = "chip";
+      el.appendChild(document.createTextNode(nm));
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.setAttribute("aria-label", "Quitar " + nm);
+      btn.textContent = "x";
+      btn.addEventListener("click", function () {
+        setNames(namesFromUI().filter(function (x) { return x !== nm; }));
+        pruneExclusions(namesFromUI());
+        renderExChips();
+        persistSetup();
+      });
+      el.appendChild(btn);
+      box.appendChild(el);
+    });
+  }
+  function fillExclusionSelects() {
+    var list = namesFromUI();
+    ["exA", "exB"].forEach(function (id) {
+      var sel = $(id);
+      var cur = sel.value;
+      sel.innerHTML = "";
+      var o0 = document.createElement("option");
+      o0.value = "";
+      o0.textContent = id === "exA" ? "Persona 1" : "Persona 2";
+      sel.appendChild(o0);
+      list.forEach(function (nm) {
+        var o = document.createElement("option");
+        o.value = nm;
+        o.textContent = nm;
+        sel.appendChild(o);
+      });
+      if (list.indexOf(cur) !== -1) sel.value = cur;
+    });
+  }
+  function renderExChips() {
+    var box = $("exChips");
+    box.innerHTML = "";
+    exclusions.forEach(function (p, idx) {
+      var el = document.createElement("span");
+      el.className = "chip";
+      el.appendChild(document.createTextNode(p[0] + " y " + p[1]));
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.setAttribute("aria-label", "Quitar exclusión");
+      btn.textContent = "x";
+      btn.addEventListener("click", function () {
+        exclusions.splice(idx, 1);
+        renderExChips();
+        persistSetup();
+      });
+      el.appendChild(btn);
+      box.appendChild(el);
+    });
+  }
+  function renderSlugHelp() {
+    var list = namesFromUI();
+    var card = $("slugCard");
+    var ul = $("slugList");
+    ul.innerHTML = "";
+    if (!list.length) { card.hidden = true; return; }
+    card.hidden = false;
+    list.forEach(function (nm) {
+      var li = document.createElement("li");
+      var slug = slugify(nm) || "nombre";
+      li.appendChild(document.createTextNode(nm + " -> "));
+      var code = document.createElement("code");
+      code.textContent = "fotos/" + slug + ".jpg";
+      li.appendChild(code);
+      ul.appendChild(li);
+    });
+  }
+
+  function showErr(id, msg) {
+    var el = $(id);
+    el.textContent = msg;
+    el.classList.add("show");
+  }
+  function hideErr(id) {
+    var el = $(id);
+    el.textContent = "";
+    el.classList.remove("show");
+  }
+
+  function persistSetup() {
+    var prev = {};
+    try { prev = JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch (e) { prev = {}; }
+    var data = {
+      names: namesFromUI(),
+      exclusions: exclusions,
+      budget: $("budget").value.trim(),
+      date: $("dateField").value.trim(),
+      tokens: prev.tokens || null
+    };
+    try { localStorage.setItem(STORE, JSON.stringify(data)); } catch (e) {}
+  }
+  function persistTokens(tokens) {
+    var data = {
+      names: namesFromUI(),
+      exclusions: exclusions,
+      budget: $("budget").value.trim(),
+      date: $("dateField").value.trim(),
+      tokens: tokens
+    };
+    try { localStorage.setItem(STORE, JSON.stringify(data)); } catch (e) {}
+  }
+  function loadStore() {
+    try { return JSON.parse(localStorage.getItem(STORE) || "null"); } catch (e) { return null; }
+  }
+
+  function baseUrl() {
+    var path = location.pathname.replace(/index\.html$/, "");
+    if (path.slice(-1) !== "/") path += "/";
+    return location.origin + path;
+  }
+  function personUrl(token) {
+    return baseUrl() + "?r=" + encodeURIComponent(token);
+  }
+  function waMessage(name, url) {
+    return "Hola " + name + ", te toca participar en el Amigo Secreto de la familia. Abre este link y gira la tómbola para ver a quién le regalas: " + url;
+  }
+
+  function spinReel(el, names, finalName, duration, done) {
+    var start = performance.now();
+    var last = 0;
+    var pool = names && names.length ? names : [finalName];
+    el.textContent = pool[0];
+    function tick(now) {
+      var p = Math.min(1, (now - start) / duration);
+      var interval = 45 + p * p * 280;
+      if (now - last >= interval) {
+        last = now;
+        if (p >= 1) {
+          el.textContent = finalName;
+          done && done();
+          return;
+        }
+        var n = pool[Math.floor(Math.random() * pool.length)];
+        if (n === el.textContent && pool.length > 1) {
+          n = pool[(pool.indexOf(n) + 1) % pool.length];
+        }
+        el.textContent = n;
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function showSetup() {
+    $("setup").hidden = false;
+    $("drawing").hidden = true;
+    $("results").hidden = true;
+  }
+  function showResults(tokens, names) {
+    $("setup").hidden = true;
+    $("drawing").hidden = true;
+    $("results").hidden = false;
+    var box = $("peopleList");
+    box.innerHTML = "";
+    names.forEach(function (nm) {
+      var token = tokens[nm];
+      var url = personUrl(token);
+      var wrap = document.createElement("div");
+      wrap.className = "person";
+      var title = document.createElement("div");
+      title.className = "person-name";
+      title.textContent = nm;
+      wrap.appendChild(title);
+      var actions = document.createElement("div");
+      actions.className = "pair";
+      var copy = document.createElement("button");
+      copy.type = "button";
+      copy.className = "btn btn-sm btn-ghost";
+      copy.textContent = "Copiar link";
+      copy.setAttribute("data-url", url);
+      copy.addEventListener("click", function () { copyLink(copy, url); });
+      var wa = document.createElement("a");
+      wa.className = "btn btn-sm btn-green";
+      wa.href = "https://wa.me/?text=" + encodeURIComponent(waMessage(nm, url));
+      wa.target = "_blank";
+      wa.rel = "noopener noreferrer";
+      wa.textContent = "Mandar por WhatsApp";
+      actions.appendChild(copy);
+      actions.appendChild(wa);
+      wrap.appendChild(actions);
+      box.appendChild(wrap);
+    });
+  }
+
+  function copyLink(btn, url) {
+    var ok = function () {
+      var prev = btn.textContent;
+      btn.textContent = "Copiado";
+      setTimeout(function () { btn.textContent = prev; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(ok).catch(function () { fallbackCopy(url, ok); });
+    } else {
+      fallbackCopy(url, ok);
+    }
+  }
+  function fallbackCopy(text, ok) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); ok(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  function onDraw() {
+    hideErr("setupErr");
+    var names = namesFromUI();
+    if (names.length < 2) {
+      showErr("setupErr", "Agrega al menos dos nombres para armar el sorteo.");
+      return;
+    }
+    pruneExclusions(names);
+    var assign = drawAssignment(names, exclusions);
+    if (!assign) {
+      showErr("setupErr", "No se pudo armar el sorteo con esas exclusiones. Prueba quitando alguna pareja o agregando más personas.");
+      return;
+    }
+    var budget = $("budget").value.trim();
+    var date = $("dateField").value.trim();
+    var tokens = {};
+    names.forEach(function (nm) {
+      tokens[nm] = encodeResult({ n: nm, a: assign[nm], p: budget, d: date, l: names });
+    });
+    persistTokens(tokens);
+    $("setup").hidden = true;
+    $("results").hidden = true;
+    $("drawing").hidden = false;
+    $("drumOrg").classList.add("spinning");
+    $("btnDraw").disabled = true;
+    spinReel($("reelOrg"), names, "Listo", SPIN_MS, function () {
+      $("drumOrg").classList.remove("spinning");
+      showResults(tokens, names);
+      $("btnDraw").disabled = false;
+    });
+  }
+
+  function resetDraw() {
+    var data = loadStore() || {};
+    data.tokens = null;
+    try { localStorage.setItem(STORE, JSON.stringify({
+      names: namesFromUI(),
+      exclusions: exclusions,
+      budget: $("budget").value.trim(),
+      date: $("dateField").value.trim(),
+      tokens: null
+    })); } catch (e) {}
+    showSetup();
+  }
+
+  function showPortrait(name) {
+    var img = $("portraitImg");
+    var av = $("portraitAvatar");
+    $("portraitIni").textContent = initials(name);
+    img.hidden = true;
+    av.hidden = false;
+    img.alt = name;
+    var slug = slugify(name);
+    if (!slug) return;
+    img.onload = function () { img.hidden = false; av.hidden = true; };
+    img.onerror = function () { img.hidden = true; av.hidden = false; };
+    img.src = "fotos/" + slug + ".jpg";
+  }
+
+  function burstConfetti() {
+    var canvas = $("confetti");
+    var ctx = canvas.getContext("2d");
+    var w, h, parts, start;
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    resize();
+    var colors = ["#9b1b1b", "#1e5c3a", "#c9a227", "#fff8e8", "#d64545", "#2f7a4a"];
+    parts = [];
+    for (var i = 0; i < 120; i++) {
+      parts.push({
+        x: Math.random() * w,
+        y: -20 - Math.random() * h * 0.3,
+        r: 3 + Math.random() * 5,
+        c: colors[i % colors.length],
+        vx: -1.5 + Math.random() * 3,
+        vy: 2 + Math.random() * 4,
+        rot: Math.random() * Math.PI,
+        vr: -0.2 + Math.random() * 0.4
+      });
+    }
+    start = performance.now();
+    function frame(now) {
+      var t = now - start;
+      ctx.clearRect(0, 0, w, h);
+      parts.forEach(function (p) {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.03;
+        p.rot += p.vr;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.fillStyle = p.c;
+        ctx.fillRect(-p.r, -p.r * 0.5, p.r * 2, p.r);
+        ctx.restore();
+      });
+      if (t < 3500) requestAnimationFrame(frame);
+      else ctx.clearRect(0, 0, w, h);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function startReveal(data) {
+    $("viewOrganizer").hidden = true;
+    $("viewReveal").hidden = false;
+    $("hello").textContent = "Hola, " + data.n;
+    $("revealReady").hidden = false;
+    $("revealSpin").hidden = true;
+    $("revealDone").hidden = true;
+    hideErr("revealErr");
+
+    $("btnSpin").onclick = function () {
+      $("btnSpin").disabled = true;
+      $("revealReady").hidden = true;
+      $("revealSpin").hidden = false;
+      $("drumRev").classList.add("spinning");
+      var pool = (data.l && data.l.length ? data.l : [data.a, data.n]).filter(Boolean);
+      spinReel($("reelRev"), pool, data.a, SPIN_MS, function () {
+        $("drumRev").classList.remove("spinning");
+        $("revealSpin").hidden = true;
+        $("revealDone").hidden = false;
+        $("assigneeName").textContent = data.a;
+        showPortrait(data.a);
+        var bits = [];
+        if (data.p) bits.push("Presupuesto: " + data.p);
+        if (data.d) bits.push("La fecha: " + data.d);
+        $("revealMeta").textContent = bits.join(" - ");
+        if (!REDUCE) burstConfetti();
+        $("btnSpin").disabled = false;
+      });
+    };
+  }
+
+  function tokenFromUrl() {
+    var q = new URLSearchParams(location.search);
+    var r = q.get("r");
+    if (r) return r;
+    if (location.hash && location.hash.indexOf("r=") !== -1) {
+      var h = new URLSearchParams(location.hash.replace(/^#/, ""));
+      return h.get("r");
+    }
+    return "";
+  }
+
+  /* ---- hero fallback if familia.jpg is missing ---- */
+  var heroImg = $("heroImg");
+  heroImg.addEventListener("error", function () {
+    $("hero").classList.add("no-photo");
+  });
+  if (heroImg.complete && heroImg.naturalWidth === 0) {
+    $("hero").classList.add("no-photo");
+  }
+
+  /* snow */
+  (function makeSnow() {
+    var box = $("snow");
+    for (var i = 0; i < 18; i++) {
+      var s = document.createElement("span");
+      s.style.left = (Math.random() * 100) + "%";
+      s.style.animationDuration = (8 + Math.random() * 10) + "s";
+      s.style.animationDelay = (-Math.random() * 10) + "s";
+      s.style.opacity = String(0.25 + Math.random() * 0.45);
+      s.style.width = s.style.height = (3 + Math.random() * 5) + "px";
+      box.appendChild(s);
+    }
+  })();
+
+  /* bind organizer */
+  $("btnAdd").addEventListener("click", function () { addName($("nameInput").value); });
+  $("nameInput").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { e.preventDefault(); addName($("nameInput").value); }
+  });
+  $("nameList").addEventListener("input", function () {
+    pruneExclusions(namesFromUI());
+    renderNameChips();
+    fillExclusionSelects();
+    renderSlugHelp();
+    persistSetup();
+  });
+  $("btnEx").addEventListener("click", function () {
+    addExclusion($("exA").value, $("exB").value);
+  });
+  $("budget").addEventListener("input", persistSetup);
+  $("dateField").addEventListener("input", persistSetup);
+  $("btnDraw").addEventListener("click", onDraw);
+  $("btnAgain").addEventListener("click", function () {
+    if (window.confirm("Esto borra el sorteo actual y los links dejan de servir. ¿Quieres armar uno nuevo?")) {
+      resetDraw();
+    }
+  });
+
+  var tok = tokenFromUrl();
+  if (tok) {
+    try {
+      startReveal(decodeResult(tok));
+    } catch (e) {
+      $("viewOrganizer").hidden = true;
+      $("viewReveal").hidden = false;
+      $("hello").textContent = "Hola";
+      $("revealReady").hidden = true;
+      showErr("revealErr", "Este link no es válido o está incompleto. Pídele a quien armó el sorteo que te lo vuelva a mandar.");
+    }
+    return;
+  }
+
+  var stored = loadStore();
+  if (stored) {
+    if (stored.names && stored.names.length) setNames(stored.names);
+    if (stored.exclusions && stored.exclusions.length) {
+      exclusions = stored.exclusions;
+      renderExChips();
+    }
+    if (stored.budget) $("budget").value = stored.budget;
+    if (stored.date) $("dateField").value = stored.date;
+    if (stored.tokens && stored.names && stored.names.length) {
+      var all = stored.names.every(function (nm) { return stored.tokens[nm]; });
+      if (all) showResults(stored.tokens, stored.names);
+    }
+  }
+})();
+</script>
+</body>
+</html>
